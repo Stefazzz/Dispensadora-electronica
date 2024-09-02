@@ -1,32 +1,33 @@
-*{
+/* Reinicio de estilos por defecto */
+* {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
 }
+
+/* Estilos generales */
 body {
     text-align: center;
-    font-family: 'sans-serif', Times, serif, sans-serif;
+    font-family: 'sans-serif', Times, serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
+/* Estilos del encabezado */
 header {
-    background-color: #d71f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
     color: #fff;
     padding: 10px;
-    text-align: center;
+    font-size: 70px;
 }
 
-main {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
+/* Estilos de los productos */
 .product {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -35,6 +36,8 @@ main {
     padding: 20px;
     width: 300px;
     text-align: center;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .product img {
@@ -43,8 +46,8 @@ main {
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
 }
-
-.price {
+/* Para el precio de los productos */
+.price { 
     font-size: 1.2em;
     color: #333;
     margin: 10px 0;
@@ -63,9 +66,13 @@ button:hover {
     background-color: #218838;
 }
 
+/* Estilos del pie de página */
 footer {
     background-color: #333;
     color: #fff;
     padding: 10px;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
