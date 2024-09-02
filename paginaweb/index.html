@@ -18,7 +18,31 @@
         <section class="product">
             <h2>Producto 1</h2>
             <img src="img/resistencias prueba.jpeg"  alt="Producto 1">
-            <p>Descripción del producto 1.</p>
+
+            <!--Es mas conveniente usar una ventana modal
+            debido a que las ventanas emergentes normalmente son
+            bloqueadas por el navegador-->
+            <!--Boton para abrir una ventanan modal-->
+            <div class="boton-modal">
+                <label for="btn-modal">
+                    Descripcion del producto
+                </label>
+            </div>
+
+            <!--Contenido de la ventanan modal-->
+            <input type="checkbox" id="btn-modal">
+            <div class="container-modal">
+                <div class="content-modal">
+                    <p>5 resistencias 330 <br>
+                        5 capacitores 3uF
+                    </p>
+                    <div class="btn-cerrar">
+                        <label for="btn-modal">Cerrar</label>
+                    </div>
+                </div>
+                <label for="btn-modal" class="cerrar-modal"></label>
+            </div>
+
             <p class="price">$5.000</p>
             <button onclick="addToCart('Producto 1', 10.00)">Comprar</button>
         </section>
