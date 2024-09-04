@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">  <!--Llamar a la funcion css para darle estilo-->
     <title>Dispensadora Electronica</title> <!-- titulo-->
+    // SDK MercadoPago.js
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 
 </head>
 
@@ -16,7 +18,7 @@
     <div>
 
         <section class="product">
-            <h2>Producto 1</h2>
+            <h2 class="name">Producto 1</h2>
             <img src="img/resistencias prueba.jpeg"  alt="Producto 1">
 
             <!--Es mas conveniente usar una ventana modal
@@ -44,7 +46,10 @@
             </div>
 
             <p class="price">$5.000</p>
-            <button onclick="addToCart('Producto 1', 10.00)">Comprar</button>
+            <button id="checkout-btn">Comprar</button>
+            <!--Contenedor mercadoPago-->
+            <div id="wallet_container"></div>
+
         </section>
 <!--PRODUCTO-->        
         <section class="product">
