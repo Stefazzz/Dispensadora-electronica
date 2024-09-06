@@ -35,6 +35,7 @@ app.post("/create_preference", async (req,res) => {
                 pending: "https://www.google.com/"
             },
             auto_return: "approved",
+            notification_url: "https://742b-2800-484-277d-b500-817b-8a54-b1ab-a89c.ngrok-free.app/webhook"
         };
         const preference = new Preference(client);
         const result = await preference.create({ body });   
@@ -46,6 +47,29 @@ app.post("/create_preference", async (req,res) => {
         res.status(500).json({
             error: "Error al crear la preferencia :("
         });
+    }
+});
+
+app.post("/webhook", async function (req,res){
+    const paymentId = req.query
+
+    try{
+        const response = await fetch (`https://api.mercadopago.com/v1/payments/${paymentId}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${client.accessToken}`
+            }
+        });
+
+    if(response.ok) {
+        const data = await response.json();
+        console.log(data);
+    }
+
+    res.sendStatus(200); //por doc se debe enviar un estado 200 para que no envie multiples notificaciones
+    }catch(error){
+        console.error('Error', error);
+        res.sendStatus(500);
     }
 });
 
